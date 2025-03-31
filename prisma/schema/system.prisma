@@ -1,0 +1,33 @@
+model User {
+  id           Int       @id
+  firstName    String
+  languageCode Languages
+  role         Roles
+  isBot        Boolean
+  isPremium    Boolean
+
+  lastName      String?
+  username      String?
+  notifyEnabled Boolean @default(true)
+
+  notifies Notify[]
+
+  @@map("users")
+}
+
+model Session {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value String
+
+  @@map("sessions")
+}
+
+enum Languages {
+  ru
+}
+
+enum Roles {
+  admin
+  user
+}
