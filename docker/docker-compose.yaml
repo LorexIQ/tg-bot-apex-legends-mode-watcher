@@ -24,6 +24,8 @@ services:
     ports:
       - ${POSTGRES_PORT:-5432}:${POSTGRES_PORT:-5432}
     restart: unless-stopped
+    networks:
+      - network
     command: -p ${POSTGRES_PORT:-5432}
 
 networks:

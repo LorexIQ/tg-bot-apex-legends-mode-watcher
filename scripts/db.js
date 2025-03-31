@@ -1,5 +1,7 @@
 const { execSync } = require('node:child_process');
-const dotenv = require('dotenv').config().parsed;
+const dotenv = require('dotenv').config({
+  path: process.env.ENV_PATH
+}).parsed;
 
 const url = {
   user: dotenv.POSTGRES_USER,
