@@ -29,3 +29,7 @@ services:
 networks:
   network:
     name: network
+
+volumes:
+  postgres:
+    name: ${PROJECT_NAME}-postgres
